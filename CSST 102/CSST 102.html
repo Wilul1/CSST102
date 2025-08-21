@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSST 102 · Basic Machine Learning</title>
+  <meta name="description" content="Course page for CSST 102: Basic Machine Learning — overview, outcomes, topics, tools, and resources." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #0f1520;
+      --muted: #9fb0c5;
+      --text: #eaf2ff;
+      --brandA: #6aa6ff;
+      --brandB: #7ef7c8;
+      --brandC: #ffd06e;
+      --card: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      --border: 1px solid rgba(255,255,255,0.12);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --shadow-soft: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 800px at 10% 0%, rgba(106,166,255,0.12), transparent 60%),
+                               radial-gradient(1000px 700px at 90% -10%, rgba(126,247,200,0.10), transparent 60%),
+                               var(--bg);
+      color:var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.6;
+    }
+    a{color:var(--brandA);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      border: var(--border);
+      background: linear-gradient(180deg, rgba(122,182,255,0.12), rgba(126,247,200,0.08)) , var(--panel);
+      box-shadow: var(--shadow);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 28px 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:var(--border);background:rgba(255,255,255,0.04);color:var(--muted);font-size:13px}
+    .title{margin:10px 0 6px;font-size: clamp(28px, 3.6vw, 44px);line-height:1.15;letter-spacing:-0.02em}
+    .subtitle{margin:0;color:var(--muted);max-width:800px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .meta span{padding:6px 10px;border-radius:10px;background:rgba(255,255,255,0.06);border:var(--border);font-size:13px;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:22px}
+    .card{
+      background: var(--card);
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .card h3{margin:2px 0 8px;font-size: clamp(18px, 2vw, 22px)}
+    .card p{margin:0;color:var(--muted)}
+    .list{list-style:none;padding:0;margin:10px 0 0}
+    .list li{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.13)}
+    .list li:last-child{border-bottom:none}
+
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.06);border:var(--border);font-size:13px;margin:4px 6px 0 0;color:var(--muted)}
+
+    footer{color:var(--muted);font-size:13px;text-align:center;margin:28px 0}
+
+    @media (max-width:920px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="tag">📘 Course Syllabus</span>
+      <h1 class="title">CSST 102 · Basic Machine Learning</h1>
+      <p class="subtitle">An hands-on introduction to the core concepts, tools, and ethics of Machine Learning. Learn how to transform raw data into predictions and insights using approachable math and beginner‑friendly Python workflows.</p>
+      <div class="meta">
+        <span>Level: Undergraduate (Foundations)</span>
+        <span>Units: 3</span>
+        <span>Prereq: Intro to Programming (Python) & Basic Statistics</span>
+        <span>Format: 2 hrs Lecture + 2 hrs Lab / week</span>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="overview">
+      <div class="card" style="grid-column: span 7;">
+        <h3>Course Description</h3>
+        <p>
+          CSST 102 introduces the <strong>fundamentals of Machine Learning (ML)</strong>, focusing on practical techniques for building predictive models. Students will explore the ML workflow — problem framing, data preparation, model selection, evaluation, and communication. Topics include supervised learning (regression & classification), unsupervised learning (clustering & dimensionality reduction), model validation, and an ethical lens on data and algorithms. The course emphasizes <strong>intuition over heavy calculus</strong> and uses <span class="kbd">Python</span>, <span class="kbd">NumPy</span>, <span class="kbd">pandas</span>, and <span class="kbd">scikit‑learn</span> in labs.
+        </p>
+      </div>
+      <div class="card" style="grid-column: span 5;">
+        <h3>Learning Outcomes</h3>
+        <ul class="list">
+          <li>Explain core ML concepts, trade‑offs, and terminology.</li>
+          <li>Prepare real‑world datasets: cleaning, encoding, splitting, and scaling.</li>
+          <li>Train baseline and improved models using scikit‑learn.</li>
+          <li>Evaluate with appropriate metrics (MAE, Accuracy, F1, ROC‑AUC).</li>
+          <li>Detect and mitigate overfitting using cross‑validation and regularization.</li>
+          <li>Communicate results responsibly, considering fairness, privacy, and reproducibility.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="topics">
+      <div class="card" style="grid-column: span 4;">
+        <h3>Key Topics</h3>
+        <ul class="list">
+          <li>ML workflow & problem framing</li>
+          <li>Data wrangling & feature engineering</li>
+          <li>Regression: <em>Linear, Ridge/Lasso</em></li>
+          <li>Classification: <em>Logistic, k‑NN, Trees, Naïve Bayes, SVM</em></li>
+          <li>Ensembles: <em>Random Forests, Gradient Boosting</em></li>
+          <li>Unsupervised: <em>k‑means, Hierarchical, PCA</em></li>
+          <li>Model selection & cross‑validation</li>
+          <li>Metrics & error analysis</li>
+          <li>Ethics: bias, fairness, privacy</li>
+          <li>Intro to neural networks (conceptual)</li>
+        </ul>
+      </div>
+      <div class="card" style="grid-column: span 8;align-items:start;">
+        <div>
+          <h3>Tools You’ll Use</h3>
+          <p class="muted">Open‑source, industry‑standard libraries.</p>
+          <div>
+            <span class="pill">Python 3.11+</span>
+            <span class="pill">Jupyter / Colab</span>
+            <span class="pill">NumPy</span>
+            <span class="pill">pandas</span>
+            <span class="pill">scikit‑learn</span>
+            <span class="pill">Matplotlib</span>
+            <span class="pill">Seaborn (optional)</span>
+            <span class="pill">Git & GitHub</span>
+          </div>
+          <p style="margin-top:10px;color:var(--muted)">All labs provide starter notebooks and datasets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="extras">
+      <div class="card" style="grid-column: span 6;">
+        <h3>Suggested Resources</h3>
+        <ul class="list">
+          <li><em>Hands‑On Machine Learning with Scikit‑Learn & TensorFlow</em> — Aurélien Géron</li>
+          <li><em>Introduction to Machine Learning with Python</em> — Andreas Müller & Sarah Guido</li>
+          <li><em>The Hundred‑Page Machine Learning Book</em> — Andriy Burkov</li>
+          <li>Documentation: scikit‑learn, pandas, NumPy</li>
+        </ul>
+      </div>
+      <div class="card" style="grid-column: span 6;">
+        <h3>FAQ</h3>
+        <details>
+          <summary>How much math is required?</summary>
+          <p>Comfort with algebra and basic probability is enough. We focus on intuition and practice.</p>
+        </details>
+        <details>
+          <summary>Do I need a powerful laptop?</summary>
+          <p>No. Colab notebooks run in the cloud, and datasets are modest. Any recent laptop is fine.</p>
+        </details>
+        <details>
+          <summary>Will we cover deep learning?</summary>
+          <p>Only conceptually. The emphasis is on classic, widely applicable methods for tabular data.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="logistics">
+      <div class="card" style="grid-column: span 7;">
+        <h3>Schedule & Venue</h3>
+        <p>Lecture: Tue/Thu · 10:00–11:00 • Lab: Thu · 11:00–13:00 • Room CS‑204 / Lab CS‑L2 (editable placeholders).</p>
+      </div>
+      <div class="card" style="grid-column: span 5;">
+        <h3>Instructor</h3>
+        <p><strong>Name:</strong> Dr. ________ • <strong>Email:</strong> your.email@school.edu • <strong>Consultation:</strong> Wed 14:00–16:00</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> CSST 102 · Basic Machine Learning — This page is a single‑file design. Customize freely.
+    </footer>
+  </div>
+
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
